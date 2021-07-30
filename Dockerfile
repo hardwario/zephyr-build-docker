@@ -24,6 +24,7 @@ RUN apt-get update \
     tzdata \
     wget \
     xz-utils \
+    ssh-client \
     && rm -rf /var/lib/apt/lists/*
 RUN pip3 install -r https://raw.githubusercontent.com/zephyrproject-rtos/zephyr/master/scripts/requirements.txt && \
     pip3 install -r https://raw.githubusercontent.com/zephyrproject-rtos/mcuboot/master/scripts/requirements.txt && \
@@ -32,7 +33,7 @@ RUN wget -O archive.tar.bz2 "https://developer.arm.com/-/media/Files/downloads/g
     echo fe0029de4f4ec43cf7008944e34ff8cc archive.tar.bz2 > /tmp/archive.md5 && md5sum -c /tmp/archive.md5 && rm /tmp/archive.md5 && \
     tar xf archive.tar.bz2 -C /opt && \
     rm archive.tar.bz2
-RUN mkdir -p /.ccache && chmod 777 /.ccache
-WORKDIR /workspace
+RUN mkdir -p /.ccache && chmod 777 /.ccache && mkdir /builds && chmod 777 /builds
 ENV ZEPHYR_TOOLCHAIN_VARIANT=gnuarmemb
 ENV GNUARMEMB_TOOLCHAIN_PATH=/opt/gcc-arm-none-eabi-9-2019-q4-major/
+WORKDIR /builds
