@@ -13,7 +13,7 @@ docker run --rm -it -v `pwd`/..:`pwd`/.. -w `pwd` -u `id -u`:`id -g` hardwario/z
 ## Hint
 For easier using recommended add alias to ~/.bashrc
 ```
-alias wmake='docker run --rm -it -v `pwd`/..:`pwd`/.. -w `pwd` -u `id -u`:`id -g` hardwario/zephyr-build:latest'
+alias dwest='docker run --rm -it -v `pwd`/..:`pwd`/.. -w `pwd` -u `id -u`:`id -g` hardwario/zephyr-build:latest'
 ```
 
 ## Workdir
