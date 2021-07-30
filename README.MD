@@ -9,8 +9,6 @@ cd application
 docker run --rm -it -v `pwd`/..:`pwd`/.. -w `pwd` -u `id -u`:`id -g` hardwario/zephyr-build:latest west build
 ```
 
---privileged
-
 
 ## Hint
 For easier using recommended add alias to ~/.bashrc
